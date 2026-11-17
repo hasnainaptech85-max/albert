@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap | Alberto Clocks</title>
+  <meta name="description" content="Find every page, section and watch collection on the Alberto Clocks website.">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --green: #12302b;
+      --green-2: #1d4a42;
+      --brass: #b08d4c;
+      --brass-dk: #8a6a2f;
+      --paper: #eef1f0;
+      --card: #fff;
+      --ink: #22302d;
+      --muted: #5d6b67;
+      --line: #c9d2cf;
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sans: "Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--brass);
+      outline-offset: 3px;
+      border-radius: 4px
+    }
+
+    /* Header */
+    .top {
+      background: var(--green);
+      color: #e9efed;
+      padding: 14px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: .02em
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 50%
+    }
+
+    .top nav {
+      display: flex;
+      gap: 8px 22px;
+      flex-wrap: wrap;
+      font-size: .92rem
+    }
+
+    .top nav a {
+      opacity: .85;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent
+    }
+
+    .top nav a:hover {
+      opacity: 1;
+      border-color: var(--brass)
+    }
+
+    .hero {
+      background: linear-gradient(180deg, var(--green) 0, var(--green-2) 100%);
+      color: #fff;
+      padding: 64px 5vw 84px
+    }
+
+    .hero-in {
+      max-width: 1080px;
+      margin: 0 auto
+    }
+
+    .crumb {
+      font-size: .85rem;
+      color: #b9c8c3;
+      margin-bottom: 18px
+    }
+
+    .crumb a:hover {
+      color: #fff;
+      text-decoration: underline
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.08;
+      max-width: 14ch
+    }
+
+    .hero p {
+      margin-top: 16px;
+      max-width: 52ch;
+      color: #d3dfdb
+    }
+
+    .stats {
+      display: flex;
+      gap: 36px;
+      margin-top: 32px;
+      flex-wrap: wrap
+    }
+
+    .stats div {
+      border-left: 2px solid var(--brass);
+      padding-left: 14px
+    }
+
+    .stats b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      line-height: 1.1
+    }
+
+    .stats span {
+      font-size: .85rem;
+      color: #b9c8c3
+    }
+
+    /* Layout */
+    main {
+      max-width: 1080px;
+      margin: -40px auto 0;
+      padding: 0 5vw 72px
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 34px clamp(20px, 4vw, 44px);
+      margin-bottom: 24px
+    }
+
+    .panel h2 {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1.2
+    }
+
+    .panel .lead {
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 4px 0 22px
+    }
+
+    /* Tree */
+    .tree,
+    .tree ul {
+      list-style: none
+    }
+
+    .tree ul {
+      margin-left: 18px;
+      padding-left: 22px;
+      border-left: 1.5px solid var(--line)
+    }
+
+    .tree li {
+      position: relative;
+      padding: 5px 0
+    }
+
+    .tree ul li::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 21px;
+      width: 16px;
+      border-top: 1.5px solid var(--line)
+    }
+
+    .node {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .node a {
+      font-weight: 600;
+      color: var(--green);
+      border-bottom: 1px solid transparent
+    }
+
+    .node a:hover {
+      border-color: var(--brass)
+    }
+
+    .node small {
+      color: var(--muted);
+      font-size: .85rem
+    }
+
+    .tag {
+      font-size: .75rem;
+      font-weight: 600;
+      padding: 1px 9px;
+      border-radius: 99px;
+      background: #f3ead7;
+      color: var(--brass-dk)
+    }
+
+    .root>.node a {
+      font-family: var(--serif);
+      font-size: 1.35rem
+    }
+
+    /* Brands */
+    .brands {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fafbfa
+    }
+
+    details[open] {
+      border-color: var(--brass);
+      background: #fff
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px
+    }
+
+    summary::-webkit-details-marker {
+      display: none
+    }
+
+    summary strong {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--green);
+      font-weight: 600
+    }
+
+    summary span {
+      font-size: .82rem;
+      color: var(--muted)
+    }
+
+    summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: var(--brass-dk);
+      margin-left: auto;
+      padding-left: 8px;
+      transition: transform .2s
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg)
+    }
+
+    details ul {
+      list-style: none;
+      padding: 0 18px 16px;
+      font-size: .9rem
+    }
+
+    details li {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 5px 0;
+      border-top: 1px solid #e6ebe9
+    }
+
+    details li a:hover {
+      color: var(--brass-dk);
+      text-decoration: underline
+    }
+
+    details li em {
+      font-style: normal;
+      color: var(--muted)
+    }
+
+    .more {
+      display: block;
+      padding: 10px 18px 16px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--brass-dk);
+      border-top: 1px solid var(--line)
+    }
+
+    .more:hover {
+      text-decoration: underline
+    }
+
+    /* Contact */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px
+    }
+
+    .facts h3 {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--brass-dk);
+      margin-bottom: 4px
+    }
+
+    .facts p {
+      font-size: .95rem
+    }
+
+    .facts a:hover {
+      text-decoration: underline
+    }
+
+    footer {
+      background: var(--green);
+      color: #b9c8c3;
+      padding: 28px 5vw;
+      text-align: center;
+      font-size: .88rem
+    }
+
+    footer a {
+      color: #fff;
+      margin: 0 10px
+    }
+
+    footer a:hover {
+      text-decoration: underline
+    }
+
+    @media (max-width:640px) {
+      .top nav {
+        gap: 14px;
+        font-size: .85rem
+      }
+
+      .tree ul {
+        margin-left: 8px;
+        padding-left: 16px
+      }
+
+      .tree ul li::before {
+        left: -16px;
+        width: 12px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important;
+        scroll-behavior: auto !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="top">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Alberto Clocks logo">Alberto Clocks</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="index.html#gall">Gallery</a>
+      <a href="index.html#abot">About us</a>
+      <a href="index.html#contat">Contact us</a>
+      <a href="collections.html">Collections</a>
+      <a href="final%20price%20list.pdf">Price</a>
+    </nav>
+  </header>
+
+  <section class="hero" >
+    <div class="hero-in">
+      <p class="crumb"><a href="index.html">Home</a> / Sitemap</p>
+      <h1>Every page, in one place.</h1>
+      <p>Browse the full structure of the Alberto Clocks website: pages, sections, watch brands and downloads.</p>
+      <div class="stats">
+        <div><b>4</b><span>Watch brands</span></div>
+        <div><b>34</b><span>Models listed</span></div>
+        <div><b>Mon – Sat</b><span>11:00 AM – 9:00 PM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <section class="panel" aria-labelledby="t-structure">
+      <h2 id="t-structure">Site structure</h2>
+      <p class="lead">Follow the branches to find what you need.</p>
+      <ul class="tree">
+        <li class="root">
+          <span class="node"><a href="index.html">Alberto Clocks</a><small>Home page</small></span>
+          <ul>
+            <li><span class="node"><a href="index.html#gall">Gallery</a><small>Featured and trending
+                  watches</small></span></li>
+            <li><span class="node"><a href="index.html#abot">About us</a><small>Our story, values and authenticity
+                  promise</small></span></li>
+            <li><span class="node"><a href="index.html#contat">Contact us</a><small>Showroom, email, phone and inquiry
+                  form</small></span></li>
+            <li>
+              <span class="node"><a href="collections.html">Collections</a><small>All watch brands</small></span>
+              <ul>
+                <li><span class="node"><a href="collections.html">All collections</a><small>Complete watch
+                      range</small></span></li>
+                <li><span class="node"><a href="collections.html#watch-rolex1">Rolex</a><small>8 models</small></span>
+                </li>
+                <li><span class="node"><a href="collections.html#watch-omega1">Omega</a><small>8 models</small></span>
+                </li>
+                <li><span class="node"><a href="collections.html#watch-casio1">Casio</a><small>9 models</small></span>
+                </li>
+                <li><span class="node"><a href="collections.html#watch-gshock1">G-Shock</a><small>9
+                      models</small></span></li>
+              </ul>
+            </li>
+            <li><span class="node"><a href="final%20price%20list.pdf">Price list</a><span class="tag">PDF</span></span>
+            </li>
+            <li><span class="node"><a href="index.html#faq">Frequently asked questions</a><small>Services, hours,
+                  location and ordering</small></span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="panel" aria-labelledby="t-brands">
+      <h2 id="t-brands">Watch collections</h2>
+      <p class="lead">Open a brand to see the models we list.</p>
+      <div class="brands">
+        <details>
+          <summary><strong>Rolex</strong><span>8 models</span></summary>
+          <ul>
+            <li><a href="collections.html#watch-rolex1">Submariner</a> <em>$250</em></li>
+            <li><a href="collections.html#watch-rolex2">Daytona</a> <em>$320</em></li>
+            <li><a href="collections.html#watch-rolex3">Datejust</a> <em>$450</em></li>
+            <li><a href="collections.html#watch-rolex4">GMT-Master II</a> <em>$550</em></li>
+            <li><a href="collections.html#watch-rolex5">Oyster Perpetual</a> <em>$390</em></li>
+            <li><a href="collections.html#watch-rolex6">Sky-Dweller</a> <em>$290</em></li>
+            <li><a href="collections.html#watch-rolex7">Milgauss</a> <em>$280</em></li>
+            <li><a href="collections.html#watch-rolex8">Air-King</a> <em>$490</em></li>
+          </ul>
+          <a class="more" href="collections.html#watch-rolex1">View first Rolex watch</a>
+        </details>
+        <details>
+          <summary><strong>Omega</strong><span>8 models</span></summary>
+          <ul>
+            <li><a href="collections.html#watch-omega1">Seamaster</a> <em>$150</em></li>
+            <li><a href="collections.html#watch-omega2">Speedmaster</a> <em>$230</em></li>
+            <li><a href="collections.html#watch-omega3">Constellation</a> <em>$270</em></li>
+            <li><a href="collections.html#watch-omega4">De Ville</a> <em>$450</em></li>
+            <li><a href="collections.html#watch-omega5">Aqua Terra</a> <em>$399</em></li>
+            <li><a href="collections.html#watch-omega6">Moonwatch</a> <em>$375</em></li>
+            <li><a href="collections.html#watch-omega7">Constellation GlobeMaster</a> <em>$399</em></li>
+            <li><a href="collections.html#watch-omega8">Aqua Terra 150M</a> <em>$270</em></li>
+          </ul>
+          <a class="more" href="collections.html#watch-omega1">View first Omega watch</a>
+        </details>
+        <details>
+          <summary><strong>Casio</strong><span>9 models</span></summary>
+          <ul>
+            <li><a href="collections.html#watch-casio1">G-Shock GA-2100</a> <em>$150</em></li>
+            <li><a href="collections.html#watch-casio2">F-91W</a> <em>$530</em></li>
+            <li><a href="collections.html#watch-casio3">A168</a> <em>$170</em></li>
+            <li><a href="collections.html#watch-casio4">AE-1200</a> <em>$650</em></li>
+            <li><a href="collections.html#watch-casio5">Edifice EFV-100</a> <em>$244</em></li>
+            <li><a href="collections.html#watch-casio6">MTP-1302</a> <em>$275</em></li>
+            <li><a href="collections.html#watch-casio7">G-Shock DW-5600</a> <em>$360</em></li>
+            <li><a href="collections.html#watch-casio8">Vintage A158</a> <em>$470</em></li>
+            <li><a href="collections.html#watch-casio9">S-M-W</a> <em>$970</em></li>
+          </ul>
+          <a class="more" href="collections.html#watch-casio1">View first Casio watch</a>
+        </details>
+        <details>
+          <summary><strong>G-Shock</strong><span>9 models</span></summary>
+          <ul>
+            <li><a href="collections.html#watch-gshock1">GA-2100</a> <em>$570</em></li>
+            <li><a href="collections.html#watch-gshock2">GA-700</a> <em>$420</em></li>
+            <li><a href="collections.html#watch-gshock3">GA-100</a> <em>$370</em></li>
+            <li><a href="collections.html#watch-gshock4">GA-B2100</a> <em>$150</em></li>
+            <li><a href="collections.html#watch-gshock5">DW-5600</a> <em>$544</em></li>
+            <li><a href="collections.html#watch-gshock6">DW-6900</a> <em>$375</em></li>
+            <li><a href="collections.html#watch-gshock7">Mudmaster GG-1000</a> <em>$390</em></li>
+            <li><a href="collections.html#watch-gshock8">GA-900</a> <em>$670</em></li>
+            <li><a href="collections.html#watch-gshock9">GA-SMW</a> <em>$875</em></li>
+          </ul>
+          <a class="more" href="collections.html#watch-gshock1">View first G-Shock watch</a>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="t-contact">
+      <h2 id="t-contact">Visit or contact us</h2>
+      <p class="lead">Questions about a watch, an order or a service? We are happy to help.</p>
+      <div class="facts">
+        <div>
+          <h3>Showroom</h3>
+          <p>Aptech Computer Education,<br>North Karachi Center</p>
+        </div>
+        <div>
+          <h3>Call or WhatsApp</h3>
+          <p><a href="tel:+923712238989">+92 371 2238989</a></p>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:hasnainaptech85@gmail.com">hasnainaptech85@gmail.com</a></p>
+        </div>
+        <div>
+          <h3>Opening hours</h3>
+          <p>Monday to Saturday<br>11:00 AM to 9:00 PM</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><a href="index.html">Home</a><a href="index.html#gall">Gallery</a><a href="index.html#abot">About us</a><a
+        href="index.html#contat">Contact us</a><a href="collections.html">Collections</a></p>
+    <p style="margin-top:10px">&copy; 2026 Alberto Clocks. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
